@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './components/Homepage';
 import Login from './components/Login';
+import Auth from './components/Auth';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Router>
             <Routes>
               <Route path= "/"  element = {<Homepage />} />
-              <Route path= "/login"  element = {<Login />} />
+              <Route path= "/login"  element = {<Login isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} />} />
+              <Route path= "/Auth"  element = {<Auth isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user} />} />
             </Routes>
           </Router>
         </div>
@@ -26,5 +28,3 @@ function App() {
 
 export default App;
 
-
-// isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}
